@@ -20,8 +20,21 @@ body {
 }
 
 .stats-container {
-    display: flex;
+    
+    display: flex;           /* enables flexbox layout */
+    align-items: center;     /* vertically centers the child elements */
+    justify-content: space-around; /* optional: spreads them evenly */
+    gap: 10px;               /* optional: space between cards */
+    margin: 20px 0;  
 }
+
+.stats-container:hover {
+    cursor: pointer;              /* changes cursor to pointer on hover */
+    box-shadow: 0 0 30px lightblue; /* adds a light blue glow */
+}
+
+
+    
 
 .stats-card {
     background-color: #a8b0bc;
