@@ -31,7 +31,7 @@ const gamesContainer = document.getElementById("games-container");
 function addGamesToPage(games) {
   // loop over each game in the array
   for (let i = 0; i < games.length; i++) {
-    let game = games[i]; // get the current game object
+    const game = games[i]; // get the current game object
 
     
 
@@ -50,11 +50,12 @@ function addGamesToPage(games) {
         // TIP: if your images are not displaying, make sure there is space
         // between the end of the src attribute and the end of the tag ("/>")
         gameCard.innerHTML = `
-  <img class="game-img" src="${game.img}" alt="${game.name}" />
-  <h3>${game.name}</h3>
-  <p>${game.description}</p>
-  <p><strong>Pledged:</strong> $${game.pledged.toLocaleString()}</p>
-  <p><strong>Backers:</strong> ${game.backers}</p>
+            <img class="game-img" src="${game.img}" alt="${game.name}" />
+            <h3>${game.name}</h3>
+            <p>${game.description}</p>
+            p>Pledged: $${game.pledged.toLocaleString()}</p>
+            <p>Goal: $${game.goal.toLocaleString()}</p>
+            <p>Backers: ${game.backers}</p>
 `;
 
         // append the game to the games-container
@@ -78,7 +79,7 @@ addGamesToPage(GAMES_JSON);
 const contributionsCard = document.getElementById("num-contributions");
 
 // use reduce() to count the number of total contributions by summing the backers
-const totalContributions = GAMES_JSON.reduce((total, game) => total + game.backers, 0);
+const totalContributions = GAMES_JSON.reduce((sum, game) => sum + game.backers, 0);
 
   
 
@@ -86,20 +87,22 @@ const totalContributions = GAMES_JSON.reduce((total, game) => total + game.backe
 
 
 // set the inner HTML using a template literal and toLocaleString to get a number with commas
-contributionsCard.innerHTML = `${totalContributions.toLocaleString("en-US")}`;
+contributionsCard.innerHTML = `${totalContributions.toLocaleString()}`;
 
 
 
 // grab the amount raised card, then use reduce() to find the total amount raised
 const raisedCard = document.getElementById("total-raised");
 
+const totalRaised = GAMES_JSON.reduce((sum,game) => sum + game.pledged, 0);
+
 // set inner HTML using template literal
-raisedCard.innerHTML = `$${totalRaised.toLocaleString("en-US")}`;
+raisedCard.innerHTML = `$${totalRaised.toLocaleString()}`;
 
 
 // grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
-gamesCard.innerHTML = `${GAMES_JSON.length.toLocaleString("en-US")}`;
+gamesCard.innerHTML = `${GAMES_JSON.length}`;
 
 
 /*************************************************************************************
@@ -166,12 +169,15 @@ allBtn.addEventListener("click", showAllGames);
 const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
-const numUnfundedGames = GAMES_JSON.filter((game) => game.pledged < game.goal).length;
+const UnfundedGames = GAMES_JSON.filter((game) => game.pledged < game.goal);
+const numUnfunded = unfundedGames.length 
 
 
 
 // create a string that explains the number of unfunded games using the ternary operator
-const displayStr = `A total of $${GAMES_JSON.reduce((total, game) => total + game.pledged, 0).toLocaleString("en-US")} has been raised for ${GAMES_JSON.length} games. Currently, ${numUnfundedGames} ${numUnfundedGames === 1 ? "game remains" : "games remain"} unfunded. We need your help to fund these amazing games!`;
+const displayStr = `A total of ${ raisedCard.innerHTML} has been raised for ${GAMES_JSON.length} games. Currently, ${numUnfunded} game${numUnfunded ==1 ? '' : 's'}=> total + game.pledged, 0).toLocaleString("en-US")} has been raised for ${GAMES_JSON.length} games. Currently, ${numUnfundedGames} ${numUnfundedGames === 1 ? '' : 's'} remain unfunded.We need your help to fund these amazing projects!`;
+
+
 
 
 
