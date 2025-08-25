@@ -99,6 +99,7 @@ const template = `
 "backers": 0,
 "img": ""
 },
+
 `
 
 export default games;

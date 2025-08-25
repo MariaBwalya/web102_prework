@@ -17,18 +17,17 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-* [✅] List anything else that you can get done to improve the app functionality!
+* [] List anything else that you can get done to improve the app functionality!
 The following **optional** features are implemented:
 
-* [✅] Displayed total number of games dynamically in the summary
-* [✅] Improved readability by formatting pledged amounts with `toLocaleString()`
+
 
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/hHebB7p.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  
