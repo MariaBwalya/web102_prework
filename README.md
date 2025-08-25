@@ -1,23 +1,28 @@
-# WEB102 Prework - *Name of App Here*
+# WEB102 Prework - *Sea Monster Funded*
 
-Submitted by: **Your Name Here**
+Submitted by: **Maria Bwalya**
 
-**Name of your app** is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
+**Sea Monster Funded** is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
 
-Time spent: **X** hours spent in total
+Time spent: **8** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-* [ ] The introduction section explains the background of the company and how many games remain unfunded.
-* [ ] The Stats section includes information about the total contributions and dollars raised as well as the top two most funded games.
-* [ ] The Our Games section initially displays all games funded by Sea Monster Crowdfunding
-* [ ] The Our Games section has three buttons that allow the user to display only unfunded games, only funded games, or all games.
+* [✅] The introduction section explains the background of the company and how many games remain unfunded.
+* [✅] The Stats section includes information about the total contributions and dollars raised as well as the top two most funded games.
+* [✅] The Our Games section initially displays all games funded by Sea Monster Crowdfunding
+* [✅] The Our Games section has three buttons that allow the user to display only unfunded games, only funded games, or all games.
 
 The following **optional** features are implemented:
 
-* [ ] List anything else that you can get done to improve the app functionality!
+* [✅] List anything else that you can get done to improve the app functionality!
+The following **optional** features are implemented:
+
+* [✅] Displayed total number of games dynamically in the summary
+* [✅] Improved readability by formatting pledged amounts with `toLocaleString()`
+
 
 ## Video Walkthrough
 
@@ -35,6 +40,9 @@ GIF created with ...
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+At first, game images were not displaying correctly because the src attribute was mistakenly set to the game’s name instead of its image URL. This was fixed by properly referencing the game.img property in the template literal.
+
 
 ## License
 
